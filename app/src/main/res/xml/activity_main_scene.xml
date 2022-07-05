@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+
+           <KeyAttribute
+               motion:motionTarget="@+id/play_ic_imageView"
+               motion:framePosition="100"
+               android:scaleX="0.6" />
+           <KeyAttribute
+               motion:motionTarget="@+id/play_ic_imageView"
+               motion:framePosition="100"
+               android:scaleY="0.6" />
+       </KeyFrameSet>
+        <OnSwipe
+            motion:touchAnchorId="@+id/main_video_imageView"
+            motion:dragDirection="dragDown"
+            motion:touchAnchorSide="bottom" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:layout_height="54dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:id="@+id/video_title_textView"
+            motion:layout_constraintStart_toEndOf="@+id/main_video_imageView" />
+        <Constraint
+            android:layout_height="54dp"
+            android:layout_width="100dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/main_video_imageView"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+        <Constraint
+            android:layout_height="@dimen/play_ic_size_48"
+            motion:layout_constraintTop_toTopOf="@+id/video_title_textView"
+            motion:layout_constraintBottom_toBottomOf="@+id/main_video_imageView"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="@dimen/play_ic_size_48"
+            android:id="@+id/play_ic_imageView"
+            android:layout_marginEnd="0dp" />
+    </ConstraintSet>
+</MotionScene>

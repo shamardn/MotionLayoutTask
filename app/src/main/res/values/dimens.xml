@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="large_margin_16">16dp</dimen>
+    <dimen name="play_ic_size_48">48dp</dimen>
+    <dimen name="play_ic_size_24">24dp</dimen>
+</resources>
